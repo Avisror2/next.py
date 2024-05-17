@@ -20,6 +20,13 @@ def stage_4(name_file):
             name_length_file.write('{}\n'.format(name))
 
 
+#  Receives length from user and returns all the name with that same length from name file
+def stage_5(name_file):
+    names = name_file.read().split()
+    name_len = int(input("Enter name length: "))
+    print("\n".join(name for name in names if len(name) == name_len))
+
+
 def main():
 
     with open(r'C:\Users\user\PycharmProjects\next\names.txt') as name_file:
@@ -35,6 +42,8 @@ def main():
 
         stage_4(name_file)  # Stage 4
         name_file.seek(0)
+
+        stage_5(name_file)  # Stage 5
 
 
 if __name__ == '__main__':
